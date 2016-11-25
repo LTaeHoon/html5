@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ajax(),each()</title>
+<script type="text/javascript" src="../js/jquery3.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('button').click(function(){
+			$.ajax({
+				url:'./data/data.json',
+				dataType:'json',
+				data:{}, //전송할 data , data가 없을 시 생략가능
+				success:function(data){
+					 str =''; //문자열 누적 변수
+					$.each(data.products, function(index,item){
+						// 1)item :item.name,item.price
+						//str += '<h2>'+ item.name + item.price +'</h2>';
+						// 2)index:0,1,2
+						str+='<h2>'+data.products[index].name +data.products[index].price +'</h2>';
+					});
+					$('#result').html(str);
+				}
+			});		
+			
+			
+		});
+			
+	});
+</script>
+</head>
+<body>
+	<button>요청</button>
+	<hr>
+	<div id="result"></div>
+</body>
+</html>

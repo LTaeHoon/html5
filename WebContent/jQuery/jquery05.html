@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> html() </title>
+<script type="text/javascript" src="../js/jquery3.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		/*
+			html() : innerHTML 속성과 유사한 기능 제공
+		*/
+		$('button').click(function(){
+			//버튼 클릭 시 수행문
+			$('#content').html('<h2>버튼을 클릭했습니다.</h2>')
+						 .css('color','green')
+						 .css('width','300px')
+						 .css('border','1px solid gray')
+						 .css('border-radius','20px');
+		});
+	});
+</script>
+</head>
+<body>
+	<button>버튼</button>
+	<hr>
+	<!-- 위 버튼 클릭 시 내용을 div 태그 표시 -->
+	<div id='content'></div>
+</body>
+</html>

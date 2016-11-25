@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>video 태그</title>
+    <!-- Video JS 설정 추가 시작 -->  
+	<link rel="stylesheet" type="text/css" href="video/video-js.css">
+    <script src="video/video.js"></script>
+   
+    <style type="text/css">     
+	#video_canvas {
+	       margin-top: 0px;
+	       margin-right: auto;
+	       margin-bottom: 0px;
+	       margin-left: auto;
+	       width: 320px;
+	       height: 240px;
+	    }
+	    .content_style {
+		padding-right: 0px;
+		padding-left:  0px; 
+	   }
+    </style>
+    <!-- Video JS 설정 추가 끝 -->
+</head>
+<body>
+
+<!-- 비디오 시작전 이미지 -->
+<video class="video-js vjs-default-skin" 
+       width="480" height="320"
+       controls preload="auto" 
+       poster="./video/poster.jpg" data-setup="{}">       
+
+ <!-- 실행되는 브라우저에서 인식되는 않는 비디오 포멧 대비-->
+ <source src="./video/wildlife.mp4" type="video/mp4"></source>      
+ <source src="../video/wildlife.ogv" type='video/ogg;
+         codecs="theora, vorbis"'></source>
+</video>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> Ajax() </title>
+<style type="text/css">
+   div{
+      width: 200px; height: 100px;
+      margin: 5px;
+      float: left; /* 다음 div 오른쪽 배치*/
+   } 
+</style>
+
+<script type="text/javascript" src="../js/jquery3.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function(){  //$() = jQuery()
+  	  //메뉴보기1 클릭 시
+  	  $('#menu1').click(function(){
+  		 //$.함수() 
+  		 $.ajax({
+  			url:'./data/ajax_data.html',
+  			dataType:'html',
+  			success:function(data){
+  				// data:통신이 성공하면 수신받은 data 저장
+  				$('#result1').html(data);
+  			}
+  		 }); //ajax end
+  	  }); //click end
+  	$('#menu2').click(function(){
+ 		 //$.함수() 
+ 		 $.ajax({
+ 			url:'./data/ajax_data.html',
+ 			dataType:'html',
+ 			success:function(data){
+ 				// data:통신이 성공하면 수신받은 data 저장
+ 				$('#result2').html($(data).find('option')); //li 태그 내용만 선별 , 참고로 find()는 하위 태그만 선별 가능함
+ 				console.log($(data).find('li'));
+ 			}
+ 		 }); //ajax end
+ 	  }); //click end
+	}); //func end
+  
+
+</script>
+
+</head>
+<body>
+   <div>
+     <a href="#" id="menu1">메뉴보기1</a>
+     <!-- 메뉴보기1 클릭 시 결과값을 출력하는 영역 -->
+     <span id="result1"> </span>
+   </div>
+   <div>
+     <a href="#" id="menu2">메뉴보기2</a>
+     <!-- 메뉴보기2 클릭 시 결과값을 출력하는 영역 -->
+     <span id="result2"> </span>
+   </div>   
+</body>
+</html>
+
+
+

@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>required, date 속성 </title>
+   <script src="../js/jquery3.js"></script>
+   
+   <script type="text/javascript">
+      /* javascript 방식 */
+      /* function data_change() {
+		var range = document.getElementById("range_num");
+		var value = document.getElementById("value");
+		value.value = range.value;
+	  } */
+	  
+	  /* jQuery 방식 */
+	  function data_change() {
+		  var range = $('#range_num').val();
+		  var value = $('#value');		  
+		  value.val(range)
+	  }
+   </script>
+</head>
+<body>
+ <form>
+   <fieldset>
+      <legend>주문내용</legend>
+      <ol>
+         <li>
+            <label>상품명</label>
+            <input type="text" id="pro" size="25" 
+                   required>
+            <!-- required 속성  : 반드시 데이터 입력 -->                   
+         </li>
+         <li>
+            <label>주문수량1</label>
+            <input type="number" id="num" min="1" max="3"
+                   value="1">
+         </li>
+         <li>
+            <label>주문수량2</label>
+            <input type="range" id="range_num" min="1" max="5"
+                   value="1" onchange="data_change()"> 
+            <!-- range 속성 : 값에 범위를 지정하는 속성 --> 
+            
+            <br>
+              주문수량2 : <input type="text" id="value" 
+                       value="1" name="value" size="10"/>   
+         </li>
+         <li>
+           <label for="email">이메일 </label>
+           <input id=email type="email" 
+                   placeholder="sample@naver.com">
+         </li>        
+      </ol>
+   </fieldset>
+   <fieldset>
+      <legend>배송일</legend>
+      <ol>
+       <li> 최소 배송일은 주말 및 공휴일을 제외하고 주문일 이후 3일 입니다.</li>
+       <li>
+          <label for="wanted">원하는 배송일</label>
+          <input type="date" id="wanted"> </li>
+          <!-- date 속성 : 날짜를 입력받을 수 있는 속성
+               크롬, 사파리 제공-->                      
+      </ol>
+   </fieldset>
+   <fieldset>
+   <legend>계산하기</legend>
+      <input type="submit" value="계산하기">   
+   </fieldset>
+ </form>
+</body>
+</html>
+
+

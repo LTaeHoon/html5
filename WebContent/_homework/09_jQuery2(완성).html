@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+ <style type="text/css">
+	.exp{display:none;}
+	.ans{display:none;}  
+
+ </style> 
+  <script type="text/javascript" src="../js/jquery3.js"></script>
+  <script type="text/javascript">
+      $(function() {	
+          $('button:eq(0)').click(function(){
+        	  if($('#explain1').html()=='＊baud = bps / 단위 신호당 비트수 입니다.<br>＊따라서 9600 / 3 = 3200 입니다.<br>'){
+        	  		$('#explain1').html('');
+        	  }else{
+        		  $('#explain1').html('＊baud = bps / 단위 신호당 비트수 입니다.<br>＊따라서 9600 / 3 = 3200 입니다.<br>');  
+        	  }
+          });
+          
+          $('button:eq(1)').click(function(){
+        	  if($('#explain2').html()=='＊BPS = baud ×단위 신호당 비트수 <br>＊쿼드 비트 = 4bit <br>'){
+      	  		$('#explain2').html('');
+      	  }else{
+      		$('#explain2').html('＊BPS = baud ×단위 신호당 비트수 <br>＊쿼드 비트 = 4bit <br>');
+      	  }
+          });
+          
+          $('button:eq(2)').click(function(){
+        	  if($('#explain3').html()=='＊ baud = bps / 단위신호당 비트수, <br>＊ bps = baud × 단위신호당 비트수  <br>'){
+      	  		$('#explain3').html('');
+      	  }else{
+      		 $('#explain3').html('＊ baud = bps / 단위신호당 비트수, <br>＊ bps = baud × 단위신호당 비트수  <br>');
+      	  }
+          });
+          
+          $('button:eq(3)').click(function(){
+        	  if($('#explain4').html()=='＊ bps = baud × 단위신호당 비트수<br>'){
+      	  		$('#explain4').html('');
+      	  }else{
+      		 $('#explain4').html('＊ bps = baud × 단위신호당 비트수<br>'); 
+      	  }
+          });
+        	  
+       
+          
+          $('#btn_correct').click(function(){
+        	  
+        	  if($('#ans1').html()=='정답: 1'){
+        		  $('#ans1').html('정답:').css('color','black');
+        	  }else{
+        		  $('#ans1').html('정답: 1').css('color','red');  
+        	  }
+        	  
+        	  if($('#ans2').html()=='정답: 4'){
+        		  $('#ans2').html('정답:').css('color','black');
+        	  }else{
+        		  $('#ans2').html('정답: 4').css('color','red');  
+        	  }
+        	  if($('#ans3').html()=='정답: 2'){
+        		  $('#ans3').html('정답:').css('color','black');
+        	  }else{
+        		  $('#ans3').html('정답: 2').css('color','red');  
+        	  }
+        	  if($('#ans4').html()=='정답: 2'){
+        		  $('#ans4').html('정답:').css('color','black');
+        	  }else{
+        		  $('#ans4').html('정답: 2').css('color','red');  
+        	  }
+        	 
+        	  
+          });
+         
+      });
+      var score=0;
+      function score_view(){
+    	  //문제별로 입력된 값과 정답이 맞으면 10점 아니면 0점을 부여하고 총점을 누적하여 해당 값을 표출하는 alert 창 띄움
+    	 var tot=0;
+    	 if($('#q1_input:checked').val() == '① 3200 baud')tot+=10;
+    	 if($('#q2_input:checked').val() == '④ 6,400') tot+=10;
+    	 if($('#q3_input:checked').val() == '② 4800') tot+=10;
+    	 if($('#q4_input:checked').val() == '② 7200bps') tot+=10;
+    	 score = tot;
+       alert('수험자가 취득한 점수는 '+score+' 입니다.');
+      }
+      function pass_fail(){
+    	 
+    	  if(score>=30){
+    		  alert(score+'점으로 합격입니다.');
+    	  }else{
+    		  alert('불합격입니다');
+    	  }
+    	  
+      }
+     
+</script>
+</head>
+<body>
+
+<h2> 정보처리기사 필기(데이터통신) </h2>
+<div id="q1">
+ <p>[문제1] 데이터 전송속도가 9600bps인 회선 상에 한 번의 신호로 세 개의 bit를 전송할 때 신호 속도는? </p>
+ <span> <input type="radio" name="q1" id="q1_input" value="① 3200 baud">① 3200 baud 
+        <input type="radio" name="q1" id="q1_input" value="② 4800 baud">② 4800 baud </span><br>
+ <span> <input type="radio" name="q1" id="q1_input" value="③ 6400 baud">③ 6400 baud 
+        <input type="radio" name="q1" id="q1_input" value="④ 9600 baud">④ 9600 baud </span>
+        
+ <p class="exp"> [해설보기]  
+   ＊baud = bps / 단위 신호당 비트수 입니다. <br>
+   ＊따라서 9600 / 3 = 3200 입니다. <br></p> 
+ <span class="ans"> 정답 : 1 </span> 
+ <br/>
+ <button>해설보기</button>
+ <p id="explain1"> </p>
+<span id="ans1">정답:</span>
+</div>
+ 
+<div id="q2">
+ <p>[문제2] 쿼드 비트를 사용하여 1,600 [baud]의 변조 속도를 지니는 데이터 신호가 있다. 이 때 데이터 신호속도[bps]는? </p>
+ <span> <input type="radio" name="q2" id="q2_input" value="① 2,400">① 2,400      
+        <input type="radio" name="q2" id="q2_input" value="② 3,200">② 3,200 </span><br>
+ <span> <input type="radio" name="q2" id="q2_input" value="③ 4,800">③ 4,800
+        <input type="radio" name="q2" id="q2_input" value="④ 6,400">④ 6,400 </span>
+
+ <p class="exp"> [해설 보기] 
+  ＊BPS = baud ×단위 신호당 비트수 <br>
+  ＊쿼드 비트 = 4bit <br></p>
+ <span class="ans"> 정답 : 4 </span>
+ <br/>
+ <button>해설보기</button>
+  <p id="explain2"></p>
+ <span id="ans2">정답:</span>
+</div>
+ 
+<div id="q3">
+<p>[문제3] 보오(baud) 속도가 2400보오이고, 한번에 2개의 비트를 전송할 때 데이터 신호속도(bps)는 얼마인가?</p> 
+ <span> <input type="radio" name="q3" id="q3_input" value="① 2,400">① 2400      
+        <input type="radio" name="q3" id="q3_input" value="② 4800">② 4800</span><br>
+ <span> <input type="radio" name="q3" id="q3_input" value="③ 7200">③ 7200
+        <input type="radio" name="q3" id="q3_input" value="④ 9600">④ 9600 </span>
+
+ <p class="exp"> [해설 보기] 
+ ＊ baud = bps / 단위신호당 비트수, <br>  
+ ＊ bps = baud × 단위신호당 비트수  <br> </p>
+ <span class="ans"> 정답 : 2 </span>
+ <br/>
+ <button>해설보기</button>
+  <p id="explain3"></p>
+ <span id="ans3">정답:</span>
+</div>
+
+<div id="q4">
+ <p> [문제4] 보오 속도가 2400[baud]이고, 8위상 편이 변조 방식을 사용할 때 전송속도는? </p>
+ <span> <input type="radio" name="q4" id="q4_input" value="① 19200bps">① 19200bps
+        <input type="radio" name="q4" id="q4_input" value="② 7200bps">② 7200bps </span><br>
+ <span> <input type="radio" name="q4" id="q4_input" value="③ 4800bps">③ 4800bps
+        <input type="radio" name="q4" id="q4_input" value="④ 2400bps">④ 2400bps </span>
+
+ <p class="exp">[해설보기]
+ ＊ bps = baud × 단위신호당 비트수<br> </p> 
+ <span class="ans"> 정답 : 2 </span>
+ <br/>
+ <button>해설보기</button>
+  <p id="explain4"></p>
+ <span id="ans4">정답:</span>
+</div>
+​
+<hr color='green'>
+<div id="btn">
+ <input type="button" value="점수보기" onclick="score_view()" class="btn" /> 
+ <input type="button" value="합격유무" onclick="pass_fail()" class="btn"/>
+ <input type="button" value="정답보기" id="btn_correct" class="btn"/>
+</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>선택자, css()</title>
+<script type="text/javascript" src="../js/jquery3.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		//1. 전체 선택자 : $('*').함수()
+		//css('속성','값'):스타일 적용 함수 
+		//$('*').css('color','red');
+		
+		//2. 태그 선택자: $('태그').함수()
+		//$('h1').css('color','red');
+		
+		//3. id 선택자: $('#id').함수()
+		//$('#h1').css('color','blue');
+		
+		//4. class 선택자 :$('.id').함수()
+		$('.class1').css('color','green');
+		//태그, class 선택자 동시 지정
+		$('p, .class2').css('color','red')
+		               .css('font-size','30px')
+		               .css('width','300px')
+		               .css('border','1px solid red')
+		               .css('border-radius','15px');
+		
+		//$('선택자').함수1().함수2().함수n();
+	});
+
+</script>
+</head>
+<body>
+	<h1 id='h1'>Hello, jQuery</h1>
+	<p class='class1 class2'>Hello, jQuery </p>
+	<h1 id='h2'>Hello, jQuery</h1>
+	<p>Hello, jQuery </p>
+</body>
+</html>

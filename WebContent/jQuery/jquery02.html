@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>태그 : div, span 함수:addClass()</title>
+<style type="text/css">
+div{background-color: green;}
+span{background-color: orange;}
+.white{color:white;}
+.large{font-size:30px;}
+.italic{font-style:italic;}
+</style>
+<script type="text/javascript" src="../js/jquery3.js"></script>
+<script type="text/javascript">
+
+  $(document).ready(function(){  //$() = jQuery()
+	 //형식 : $('선택자').addClass('클래스명');  선택자: '태그','#id','.class'
+	 $('div').addClass('white'); //div 태그에 스타일 적용	 
+  	 $('span').addClass('large'); //spn 태그에 스타일 적용
+  	 $('.text2').addClass('italic'); //text2클래스 대상 스타일 적용
+  });
+  
+</script>
+
+
+</head>
+<body>
+	<div class="text1">블럭형식으로 공간분할 태그</div>
+	<div> Black 형식 : 행 단위로 공간 분할 </div>
+	<span class= "text2"> 라인형식으로 공간분할 태그 </span>
+	<span> Line 형식 :줄 단위로 공강 분할</span>
+</body>
+</html>

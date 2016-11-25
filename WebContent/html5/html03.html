@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var checkfrm = function() {
+		var index = document.frm.sel.selectedIndex;
+		document.frm.fruit[index].checked = true;
+	}	
+</script>
+
+</head>
+<body>
+
+<form name="frm">
+	<select name="sel" onchange="checkfrm()">
+		<option value="사과" selected>apple</option>
+		<option value="수박">water melon</option>
+		<option value="키위">kiwi</option>
+	</select><br /><br /><br /><br />
+		
+	<input type="radio" name="fruit" value="사과" checked> 사과 <br />
+	<input type="radio" name="fruit" value="수박" > 수박 <br />
+	<input type="radio" name="fruit" value="키위"> 키위 <br /><br />
+
+</form>
+</body>
+</html>

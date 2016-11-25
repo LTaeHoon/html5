@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>readonly, datalist, number 속성</title>
+</head>
+<body>
+<fieldset>
+   <legend>주문내용</legend>
+   <ol>  
+      <li> 
+         <label for="prod">상품명</label>
+         <input id="prod" type="text" value="슈트" 
+            readonly>
+         <!-- readonly 속성 : 읽기전송(수정불가) -->
+         <!-- 크롬, 사파리 브라우저에서 제공 -->            
+      </li>
+      <li> 
+         <label for="pcolor">색상</label>
+         <!-- list 속성 : datalist 태그 연결 속성 -->
+         <input id="pcolor" type="text" list="mycolor">
+         <!-- datalist 태그 : 입력상자에서 선택 가능한
+              값을 지정하는 태그
+              크롬 브라우저에서 제공 -->
+         <datalist id="mycolor">
+            <option value="black" label="검정색">
+            <option value="white" label="흰색">
+            <option value="skyblue" label="하늘색">
+         </datalist>         
+      </li>
+      <li>
+         <label for="order">주문개수</label>
+         <input id="order" type="number" 
+                min="1" max="10" value="1">
+         <!-- number 속성 : 수량을 나타내는 속성
+            min="최소값" max="최대값" value="초기값"
+            크롬, 사파리에서 제공-->               
+      </li>
+   </ol>
+</fieldset>
+</body>
+</html>

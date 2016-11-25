@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fieldset, legend, label태그, placeholder,email속성</title>
+</head>
+<body>
+<form>  
+  <!-- <fieldset> 태그 : <label>과 <input> 태그들을 
+        하나로 그룹화시키는 역할 -->
+  <fieldset>          
+     <!-- <legend> 태그 : fieldset에 제목을 부여하는 태그-->
+     <legend> 개인 정보 입력</legend>
+     <ol>  <!-- 순서 있는 목록 -->
+        <li>
+           <!-- <label> 태그 : <input>태그에 이름을
+                지정하는 태그, for="input id값" -->           
+           <label for="name"> 이름 </label>
+           <input id=name placeholder="8자 미만  공백 없이">
+           <!-- placeholder속성 : 힌트 제공 -->
+        </li>
+        <li>
+           <label for="email"> 이메일 </label>
+           <input id=email type="email" 
+                   placeholder="sample@naver.com">
+           <!-- type="email" : 이메일 형식만 입력받음
+                크롬 브라우저에서만 제공-->                   
+        </li>            
+        <li>
+           <label for="phone"> 전화번호 </label>
+           <input type="text" id=phone name="phone" 
+                   placeholder="010-1234-4567">
+        </li>
+     </ol>
+  </fieldset>
+  <fieldset>
+     <legend>승인하기</legend>
+     <!-- button 태그 : 버튼을 만들어주는 태그
+          value 속성이 없으면 자체 버튼 이름 제공  -->
+     <button type="submit">구매하기</button>
+     <!-- <input type="submit" value="구매하기"> -->
+  </fieldset>
+</form>
+</body>
+</html>

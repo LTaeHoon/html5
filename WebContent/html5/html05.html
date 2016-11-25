@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>autofocus속성 </title>
+
+</head>
+<body>
+<form>
+  <fieldset>
+     <legend> 개인 정보 입력</legend>
+     <ol>  <!-- 순서 있는 목록 -->
+        <li> 
+           <label for="name"> 이름 </label>
+           <input id=name type="text" 
+                   placeholder="8자 미만  공백 없이" autofocus>           
+           <!-- 크롬, Fire fox 브라우저에서 제공 -->        
+        </li>
+        <li>
+           <label for="email"> 이메일 </label>
+           <input id=email type="email" 
+                   placeholder="sample@naver.com">
+                 
+        </li>            
+        <li>
+           <label for="phone"> 전화번호 </label>
+           <input id=phone name="phone" 
+                   placeholder="010-1234-4567">
+        </li>
+     </ol>
+  </fieldset>
+  <fieldset>
+     <legend>승인하기</legend>
+     <button type="submit">구매하기</button>
+  </fieldset>
+</form>
+</body>
+</html>
+

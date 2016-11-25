@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인 검증, 함수 val()</title>
+<script type="text/javascript" src="../js/jquery3.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		//[로그인] 버튼 클릭 시 함수
+		$('#btn').click(function(){
+			//버튼 클릭 시 수행 내용 작성
+			data_check(); //로그인 검증 함수 호출
+		});
+	});
+	
+	//로그인 검증 관련 함수
+	function data_check(){
+		//alert('호출성공');
+		if($.trim($('#id').val())==''){
+			alert('id를 입력하세요.');
+			$('#id').val('').focus();
+			return false;
+		}
+		if($.trim($('#pwd').val())==''){
+			alert('비번을 입력하세요.')
+			$('#pwd').focus();
+			return false;
+		}
+		alert('로그인 성공~~~');
+		/*
+			[jQuery 주요 문법]
+			1. 선택자 엘리먼트 가져오기
+			형식) $('선택자')
+			-> 선택자 : tag, id, class
+			2. 선택자 엘리먼트에 함수 적용
+			형식) $('선택자').함수1(),함수2()
+			-> 함수는 왼쪽에서 오른쪽 순으로 적용
+			ex) $('#id').val('').focus():id 내용 제거, 커서 이동
+			3. jQuery 함수 호출
+			 형식) $.함수명()
+			 ex)$.trim() :처음과 마지막 공백 문자 제거
+		*/
+		
+	}
+	
+
+</script>
+</head>
+<body>
+	<fieldset>
+		<legend>로그인 정보</legend>
+		<label for='id'>아이디</label>
+		<input type="text" id='id' name='id'/>
+		<label for='pwd'>비밀번호</label>
+		<input type="password" id='pwd' name='pwd'/>
+		<input type="button" value='로그인' id='btn'/>
+	</fieldset>
+</body>
+</html>

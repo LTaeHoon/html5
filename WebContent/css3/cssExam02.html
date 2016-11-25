@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>box-shadow</title>
+  <style type="text/css">
+    #photo{
+       position: absolute; 
+       left : 50px; top : 20px;
+    }
+    #shadow{
+       position: absolute; 
+       left : 300px; top : 20px; 
+       /* css3 추가 기능 */
+       border-radius : 500px;
+       box-shadow : 10px -10px 100px skyblue;
+       /* 그림자 길이, 방향, 범위(번짐), 색상*/   
+    }
+  </style>
+</head>
+<body>
+   <img id="photo" src="../images/img03.jpg" 
+        width="200" height="250"/>
+   <img id="shadow" src="../images/img03.jpg" 
+        width="200" height="250"/>
+   
+</body>
+</html>
+
+
